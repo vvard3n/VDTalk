@@ -27,31 +27,24 @@
 
 - (void)loadChildControllers
 {
-    [self setupChildNavgationControllerWithClass:[VDNavigationViewController class] tabBarImageName:@"tab_conversation" rootContorllerClass:[VDMessageViewController class] rootViewContollerTitle:@"会话"];
-    [self setupChildNavgationControllerWithClass:[VDNavigationViewController class] tabBarImageName:@"tab_ding" rootContorllerClass:[VDContactViewController class] rootViewContollerTitle:@"通知"];
-    [self setupChildNavgationControllerWithClass:[VDNavigationViewController class] tabBarImageName:@"tab_oa" rootContorllerClass:[VDContactViewController class] rootViewContollerTitle:@"OA"];
-    [self setupChildNavgationControllerWithClass:[VDNavigationViewController class] tabBarImageName:@"tab_contact" rootContorllerClass:[VDContactViewController class] rootViewContollerTitle:@"联系人"];
-    [self setupChildNavgationControllerWithClass:[VDNavigationViewController class] tabBarImageName:@"tab_more" rootContorllerClass:[VDMoreViewController class] rootViewContollerTitle:@"更多"];
+    [self setupChildNavgationControllerWithRootViewController:[[VDMessageViewController alloc] init] rootViewControllerTitle:@"会话" tabBarImageName:@"tab_conversation"];
 
-//    UIViewController* rootV = [[VDContactViewController alloc] initWithStyle:UITableViewStyleGrouped];
-//    rootV.title = @"联系人";
-//    UINavigationController* nav = [[VDNavigationViewController alloc] initWithRootViewController:rootV];
-//    nav.tabBarItem.image = [UIImage imageNamed:@"tab_conversation"];
-//    [self addChildViewController:nav];
+    [self setupChildNavgationControllerWithRootViewController:[[UITableViewController alloc] init] rootViewControllerTitle:@"OA" tabBarImageName:@"tab_ding"];
+
+    [self setupChildNavgationControllerWithRootViewController:[[UITableViewController alloc] initWithStyle:UITableViewStyleGrouped] rootViewControllerTitle:@"会话" tabBarImageName:@"tab_contact"];
+
+    [self setupChildNavgationControllerWithRootViewController:[[VDContactViewController alloc] init] rootViewControllerTitle:@"联系人" tabBarImageName:@"tab_contact"];
+
+    [self setupChildNavgationControllerWithRootViewController:[[UITableViewController alloc] init] rootViewControllerTitle:@"更多" tabBarImageName:@"tab_more"];
 }
 
 /**
- *  添加导航视图
- *
- *  @param class                   导航视图类
- *  @param name                    tabBar名称
- *  @param rootViewContorllerClass 导航视图 - rootView
- *  @param title                   rootView标题
+ *  创建NavtionController，并添加rootViewController
  */
-- (void)setupChildNavgationControllerWithClass:(Class) class tabBarImageName:(NSString*)name rootContorllerClass:(Class)rootViewContorllerClass rootViewContollerTitle:(NSString*)title {
-    UIViewController* rootV = [[rootViewContorllerClass alloc] init];
-    rootV.title = title;
-    UINavigationController* nav = [[class alloc] initWithRootViewController:rootV];
+- (void)setupChildNavgationControllerWithRootViewController:(UIViewController*)rootViewController rootViewControllerTitle:(NSString*)title tabBarImageName:(NSString*)name
+{
+    rootViewController.title = title;
+    VDNavigationViewController* nav = [[VDNavigationViewController alloc] initWithRootViewController:rootViewController];
     nav.tabBarItem.image = [UIImage imageNamed:name];
     [self addChildViewController:nav];
 }
