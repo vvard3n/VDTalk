@@ -19,6 +19,8 @@
 		76552C691BDA76D5008E5CE8 /* VDMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76552C681BDA76D5008E5CE8 /* VDMoreViewController.m */; };
 		76552C6D1BDA7784008E5CE8 /* VDProfileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 76552C6B1BDA7784008E5CE8 /* VDProfileCell.m */; };
 		76552C6E1BDA7784008E5CE8 /* VDProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76552C6C1BDA7784008E5CE8 /* VDProfileCell.xib */; };
+		F80C925A1BDAAA2C00DB070C /* VDSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F80C92591BDAAA2C00DB070C /* VDSettingViewController.m */; settings = {ASSET_TAGS = (); }; };
+		F80C925D1BDAAB2700DB070C /* VDHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F80C925C1BDAAB2700DB070C /* VDHelpViewController.m */; settings = {ASSET_TAGS = (); }; };
 		F8873B961BDA8B7A00CF95AC /* VDTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8873B951BDA8B7A00CF95AC /* VDTabBarController.m */; settings = {ASSET_TAGS = (); }; };
 		F8873B9B1BDA8BFE00CF95AC /* VDBasicTableViewCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F8873B9A1BDA8BFE00CF95AC /* VDBasicTableViewCellModel.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
@@ -45,6 +47,10 @@
 		76552C6A1BDA7784008E5CE8 /* VDProfileCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VDProfileCell.h; sourceTree = "<group>"; };
 		76552C6B1BDA7784008E5CE8 /* VDProfileCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VDProfileCell.m; sourceTree = "<group>"; };
 		76552C6C1BDA7784008E5CE8 /* VDProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VDProfileCell.xib; sourceTree = "<group>"; };
+		F80C92581BDAAA2C00DB070C /* VDSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VDSettingViewController.h; sourceTree = "<group>"; };
+		F80C92591BDAAA2C00DB070C /* VDSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VDSettingViewController.m; sourceTree = "<group>"; };
+		F80C925B1BDAAB2700DB070C /* VDHelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VDHelpViewController.h; sourceTree = "<group>"; };
+		F80C925C1BDAAB2700DB070C /* VDHelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VDHelpViewController.m; sourceTree = "<group>"; };
 		F8873B941BDA8B7A00CF95AC /* VDTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VDTabBarController.h; sourceTree = "<group>"; };
 		F8873B951BDA8B7A00CF95AC /* VDTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VDTabBarController.m; sourceTree = "<group>"; };
 		F8873B991BDA8BFE00CF95AC /* VDBasicTableViewCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VDBasicTableViewCellModel.h; sourceTree = "<group>"; };
@@ -208,6 +214,10 @@
 			children = (
 				76552C671BDA76D5008E5CE8 /* VDMoreViewController.h */,
 				76552C681BDA76D5008E5CE8 /* VDMoreViewController.m */,
+				F80C92581BDAAA2C00DB070C /* VDSettingViewController.h */,
+				F80C92591BDAAA2C00DB070C /* VDSettingViewController.m */,
+				F80C925B1BDAAB2700DB070C /* VDHelpViewController.h */,
+				F80C925C1BDAAB2700DB070C /* VDHelpViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -330,7 +340,9 @@
 				76552C691BDA76D5008E5CE8 /* VDMoreViewController.m in Sources */,
 				76552C5E1BDA6A82008E5CE8 /* VDMessageCell.m in Sources */,
 				F8873B9B1BDA8BFE00CF95AC /* VDBasicTableViewCellModel.m in Sources */,
+				F80C925A1BDAAA2C00DB070C /* VDSettingViewController.m in Sources */,
 				76552C591BDA6A82008E5CE8 /* VDEnterpriseCell.m in Sources */,
+				F80C925D1BDAAB2700DB070C /* VDHelpViewController.m in Sources */,
 				76552C6D1BDA7784008E5CE8 /* VDProfileCell.m in Sources */,
 				F8873B961BDA8B7A00CF95AC /* VDTabBarController.m in Sources */,
 				76552C2A1BDA66E9008E5CE8 /* AppDelegate.m in Sources */,

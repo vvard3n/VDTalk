@@ -22,6 +22,11 @@
 {
     [super viewDidLoad];
 
+    self.tableView.sectionHeaderHeight = 44;
+
+    //self.tableView.backgroundColor = [UIColor whiteColor];
+    //self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+
     [self setupCellModel];
 }
 
@@ -68,5 +73,21 @@
         view.title = model.title;
         [self.navigationController pushViewController:view animated:YES];
     }
+}
+
+- (UIView*)tableView:(UITableView*)tableView viewForHeaderInSection:(NSInteger)section
+{
+    NSLog(@"123");
+    UIView* view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 44)];
+    view.backgroundColor = [UIColor whiteColor];
+    UILabel* label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 25)];
+    label.text = @"我是标题";
+    [view addSubview:label];
+    return view;
+}
+
+- (CGFloat)tableView:(UITableView*)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 44;
 }
 @end
