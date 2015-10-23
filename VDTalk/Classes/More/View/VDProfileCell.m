@@ -22,7 +22,7 @@
 
 + (instancetype)profileCellWithTableView:(UITableView*)tableView
 {
-    VDProfileCell* cell = [tableView dequeueReusableCellWithIdentifier:@"ProfileCell"];
+    VDProfileCell* cell = [tableView dequeueReusableCellWithIdentifier:@"profileCell"];
     if (nil == cell) {
         cell = [[NSBundle mainBundle] loadNibNamed:@"VDProfileCell" owner:nil options:nil].lastObject;
     }
