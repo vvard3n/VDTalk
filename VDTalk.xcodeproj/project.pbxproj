@@ -18,6 +18,9 @@
 		76552C5E1BDA6A82008E5CE8 /* VDMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 76552C551BDA6A82008E5CE8 /* VDMessageCell.m */; };
 		76552C5F1BDA6A82008E5CE8 /* VDMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76552C561BDA6A82008E5CE8 /* VDMessageCell.xib */; };
 		76552C611BDA6CF5008E5CE8 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76552C601BDA6CF5008E5CE8 /* Image.xcassets */; };
+		76552C691BDA76D5008E5CE8 /* VDMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76552C681BDA76D5008E5CE8 /* VDMoreViewController.m */; };
+		76552C6D1BDA7784008E5CE8 /* VDProfileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 76552C6B1BDA7784008E5CE8 /* VDProfileCell.m */; };
+		76552C6E1BDA7784008E5CE8 /* VDProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76552C6C1BDA7784008E5CE8 /* VDProfileCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +44,11 @@
 		76552C551BDA6A82008E5CE8 /* VDMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VDMessageCell.m; sourceTree = "<group>"; };
 		76552C561BDA6A82008E5CE8 /* VDMessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VDMessageCell.xib; sourceTree = "<group>"; };
 		76552C601BDA6CF5008E5CE8 /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
+		76552C671BDA76D5008E5CE8 /* VDMoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VDMoreViewController.h; sourceTree = "<group>"; };
+		76552C681BDA76D5008E5CE8 /* VDMoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VDMoreViewController.m; sourceTree = "<group>"; };
+		76552C6A1BDA7784008E5CE8 /* VDProfileCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VDProfileCell.h; sourceTree = "<group>"; };
+		76552C6B1BDA7784008E5CE8 /* VDProfileCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VDProfileCell.m; sourceTree = "<group>"; };
+		76552C6C1BDA7784008E5CE8 /* VDProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VDProfileCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +100,8 @@
 		76552C3C1BDA6A82008E5CE8 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				76552C661BDA76A7008E5CE8 /* Biu */,
+				76552C621BDA765F008E5CE8 /* More */,
 				76552C281BDA66E9008E5CE8 /* AppDelegate.h */,
 				76552C291BDA66E9008E5CE8 /* AppDelegate.m */,
 				76552C3F1BDA6A82008E5CE8 /* Contact */,
@@ -192,6 +202,49 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		76552C621BDA765F008E5CE8 /* More */ = {
+			isa = PBXGroup;
+			children = (
+				76552C631BDA765F008E5CE8 /* Controller */,
+				76552C641BDA765F008E5CE8 /* Model */,
+				76552C651BDA765F008E5CE8 /* View */,
+			);
+			path = More;
+			sourceTree = "<group>";
+		};
+		76552C631BDA765F008E5CE8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				76552C671BDA76D5008E5CE8 /* VDMoreViewController.h */,
+				76552C681BDA76D5008E5CE8 /* VDMoreViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		76552C641BDA765F008E5CE8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		76552C651BDA765F008E5CE8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				76552C6A1BDA7784008E5CE8 /* VDProfileCell.h */,
+				76552C6B1BDA7784008E5CE8 /* VDProfileCell.m */,
+				76552C6C1BDA7784008E5CE8 /* VDProfileCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		76552C661BDA76A7008E5CE8 /* Biu */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Biu;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -250,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				76552C5A1BDA6A82008E5CE8 /* VDEnterpriseCell.xib in Resources */,
+				76552C6E1BDA7784008E5CE8 /* VDProfileCell.xib in Resources */,
 				76552C611BDA6CF5008E5CE8 /* Image.xcassets in Resources */,
 				76552C5F1BDA6A82008E5CE8 /* VDMessageCell.xib in Resources */,
 			);
@@ -265,9 +319,11 @@
 				76552C581BDA6A82008E5CE8 /* VDContactViewController.m in Sources */,
 				76552C5C1BDA6A82008E5CE8 /* VDTabBarController.m in Sources */,
 				76552C5D1BDA6A82008E5CE8 /* VDMessageViewController.m in Sources */,
+				76552C691BDA76D5008E5CE8 /* VDMoreViewController.m in Sources */,
 				76552C5E1BDA6A82008E5CE8 /* VDMessageCell.m in Sources */,
 				76552C591BDA6A82008E5CE8 /* VDEnterpriseCell.m in Sources */,
 				76552C5B1BDA6A82008E5CE8 /* VDNavigationViewController.m in Sources */,
+				76552C6D1BDA7784008E5CE8 /* VDProfileCell.m in Sources */,
 				76552C2A1BDA66E9008E5CE8 /* AppDelegate.m in Sources */,
 				76552C271BDA66E9008E5CE8 /* main.m in Sources */,
 			);

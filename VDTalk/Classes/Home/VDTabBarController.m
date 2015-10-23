@@ -9,7 +9,8 @@
 #import "VDTabBarController.h"
 #import "VDNavigationViewController.h"
 #import "VDMessageViewController.h"
-#import "vdContactViewController.h"
+#import "VDContactViewController.h"
+#import "VDMoreViewController.h"
 
 @interface VDTabBarController ()
 
@@ -27,14 +28,16 @@
 - (void)loadChildControllers
 {
     [self setupChildNavgationControllerWithClass:[VDNavigationViewController class] tabBarImageName:@"tab_conversation" rootContorllerClass:[VDMessageViewController class] rootViewContollerTitle:@"会话"];
+    [self setupChildNavgationControllerWithClass:[VDNavigationViewController class] tabBarImageName:@"tab_ding" rootContorllerClass:[VDContactViewController class] rootViewContollerTitle:@"通知"];
+    [self setupChildNavgationControllerWithClass:[VDNavigationViewController class] tabBarImageName:@"tab_oa" rootContorllerClass:[VDContactViewController class] rootViewContollerTitle:@"OA"];
+    [self setupChildNavgationControllerWithClass:[VDNavigationViewController class] tabBarImageName:@"tab_contact" rootContorllerClass:[VDContactViewController class] rootViewContollerTitle:@"联系人"];
+    [self setupChildNavgationControllerWithClass:[VDNavigationViewController class] tabBarImageName:@"tab_more" rootContorllerClass:[VDMoreViewController class] rootViewContollerTitle:@"更多"];
 
-    //    [self setupChildNavgationControllerWithClass:[VDNavigationViewController class] tabBarImageName:@"tab_conversation" rootContorllerClass:[VDContactViewController class] rootViewContollerTitle:@"联系人"];
-
-    UIViewController* rootV = [[VDContactViewController alloc] initWithStyle:UITableViewStyleGrouped];
-    rootV.title = @"联系人";
-    UINavigationController* nav = [[VDNavigationViewController alloc] initWithRootViewController:rootV];
-    nav.tabBarItem.image = [UIImage imageNamed:@"tab_conversation"];
-    [self addChildViewController:nav];
+//    UIViewController* rootV = [[VDContactViewController alloc] initWithStyle:UITableViewStyleGrouped];
+//    rootV.title = @"联系人";
+//    UINavigationController* nav = [[VDNavigationViewController alloc] initWithRootViewController:rootV];
+//    nav.tabBarItem.image = [UIImage imageNamed:@"tab_conversation"];
+//    [self addChildViewController:nav];
 }
 
 /**
