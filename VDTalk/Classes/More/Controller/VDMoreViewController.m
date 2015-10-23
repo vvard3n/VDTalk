@@ -94,7 +94,7 @@
         VDProfileCell *pcell = self.dataArray[0][0];
         if (pcell != nil) {
             UIViewController *view = [[UITableViewController alloc]init];
-            view.title = @"test";
+            view.title = @"%userName";
             [self.navigationController pushViewController:view animated:YES];
         }
     }
