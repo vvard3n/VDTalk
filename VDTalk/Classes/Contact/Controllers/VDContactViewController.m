@@ -20,6 +20,11 @@
     [super viewDidLoad];
 }
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView*)tableView
+{
+    return 5;
+}
+
 - (NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section
 {
     return 10;
@@ -36,16 +41,7 @@
         cell.imageView.image = [UIImage imageNamed:@"contact_icon_mobile_contact"];
         cell.textLabel.text = @"测试...";
     }
-
-    NSLog(@"%@", NSStringFromCGRect(cell.bounds));
     return cell;
-}
-
-- (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
-{
-    UITableViewCell* cell = [tableView cellForRowAtIndexPath:indexPath];
-    NSLog(@"image %@", NSStringFromCGRect(cell.imageView.frame));
-    NSLog(@"label %@", NSStringFromCGRect(cell.textLabel.frame));
 }
 
 - (CGFloat)tableView:(UITableView*)tableView heightForRowAtIndexPath:(NSIndexPath*)indexPath

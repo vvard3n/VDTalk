@@ -7,7 +7,6 @@
 //
 
 #import "VDTabBarController.h"
-#import "VDNavigationViewController.h"
 #import "VDMessageViewController.h"
 #import "VDContactViewController.h"
 #import "VDMoreViewController.h"
@@ -31,9 +30,9 @@
 
     [self setupChildNavgationControllerWithRootViewController:[[UITableViewController alloc] init] rootViewControllerTitle:@"OA" tabBarImageName:@"tab_ding"];
 
-    [self setupChildNavgationControllerWithRootViewController:[[UITableViewController alloc] initWithStyle:UITableViewStyleGrouped] rootViewControllerTitle:@"会话" tabBarImageName:@"tab_contact"];
+    [self setupChildNavgationControllerWithRootViewController:[[UITableViewController alloc] init] rootViewControllerTitle:@"工作" tabBarImageName:@"tab_oa"];
 
-    [self setupChildNavgationControllerWithRootViewController:[[VDContactViewController alloc] init] rootViewControllerTitle:@"联系人" tabBarImageName:@"tab_contact"];
+    [self setupChildNavgationControllerWithRootViewController:[[VDContactViewController alloc] initWithStyle:UITableViewStyleGrouped] rootViewControllerTitle:@"联系人" tabBarImageName:@"tab_contact"];
 
     [self setupChildNavgationControllerWithRootViewController:[[UITableViewController alloc] init] rootViewControllerTitle:@"更多" tabBarImageName:@"tab_more"];
 }
@@ -44,7 +43,7 @@
 - (void)setupChildNavgationControllerWithRootViewController:(UIViewController*)rootViewController rootViewControllerTitle:(NSString*)title tabBarImageName:(NSString*)name
 {
     rootViewController.title = title;
-    VDNavigationViewController* nav = [[VDNavigationViewController alloc] initWithRootViewController:rootViewController];
+    UINavigationController* nav = [[UINavigationController alloc] initWithRootViewController:rootViewController];
     nav.tabBarItem.image = [UIImage imageNamed:name];
     [self addChildViewController:nav];
 }

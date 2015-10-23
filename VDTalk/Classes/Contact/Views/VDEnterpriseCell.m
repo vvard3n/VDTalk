@@ -19,9 +19,4 @@
     return cell;
 }
 
-- (void)awakeFromNib
-{
-    NSLog(@"%@", NSStringFromCGRect(self.bounds));
-}
-
 @end
