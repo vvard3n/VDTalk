@@ -16,7 +16,6 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
     // Configure the view for the selected state
 }
 
@@ -26,6 +25,7 @@
     if (nil == cell) {
         cell = [[NSBundle mainBundle] loadNibNamed:@"VDProfileCell" owner:nil options:nil].lastObject;
     }
+    
     return cell;
 }
 
