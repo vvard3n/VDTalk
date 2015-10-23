@@ -7,9 +7,12 @@
 //
 
 #import "VDContactViewController.h"
+#import "VDBasicTableViewCellModel.h"
 #import "VDEnterpriseCell.h"
 
 @interface VDContactViewController ()
+
+@property (strong, nonatomic) NSArray* dataArray;
 
 @end
 
@@ -18,39 +21,52 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    [self setupCellModel];
+}
+
+- (void)setupCellModel
+{
+    VDBasicTableViewCellModel* model10 = [VDBasicTableViewCellModel modelWithTitle:@"手机通讯录" iconName:@"contact_icon_mobile_contact" destinationControllerClass:[UITableViewController class]];
+    VDBasicTableViewCellModel* model11 = [VDBasicTableViewCellModel modelWithTitle:@"钉钉好友" iconName:@"contact_icon_mobile_contact" destinationControllerClass:[UITableViewController class]];
+    VDBasicTableViewCellModel* model20 = [VDBasicTableViewCellModel modelWithTitle:@"我的群组" iconName:@"contact_icon_mobile_contact" destinationControllerClass:[UITableViewController class]];
+    VDBasicTableViewCellModel* model30 = [VDBasicTableViewCellModel modelWithTitle:@"特别关注" iconName:@"contact_icon_mobile_contact" destinationControllerClass:[UITableViewController class]];
+
+    self.dataArray = @[ @[ model10, model11 ],
+        @[ model20 ],
+        @[ model30 ] ];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView*)tableView
 {
-    return 5;
+    return self.dataArray.count;
 }
 
 - (NSInteger)tableView:(UITableView*)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return [self.dataArray[section] count];
 }
 
 - (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath
 {
-    UITableViewCell* cell;
-    if (indexPath.row == 0) {
-        cell = [VDEnterpriseCell enterpriseCellWithTableView:tableView];
+    NSString* ID = @"BasicCell";
+    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    if (nil == cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
     }
-    else {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"123"];
-        cell.imageView.image = [UIImage imageNamed:@"contact_icon_mobile_contact"];
-        cell.textLabel.text = @"测试...";
-    }
+    VDBasicTableViewCellModel* model = self.dataArray[indexPath.section][indexPath.row];
+    cell.imageView.image = [UIImage imageNamed:model.icon];
+    cell.textLabel.text = model.title;
     return cell;
 }
 
-- (CGFloat)tableView:(UITableView*)tableView heightForRowAtIndexPath:(NSIndexPath*)indexPath
+- (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
 {
-    if (indexPath.row == 0) {
-        return 85;
-    }
-    else {
-        return 44;
+    VDBasicTableViewCellModel* model = self.dataArray[indexPath.section][indexPath.row];
+    if (model.destinationControllerClass != nil) {
+        UIViewController* view = [[model.destinationControllerClass alloc] init];
+        view.title = model.title;
+        [self.navigationController pushViewController:view animated:YES];
     }
 }
 @end
