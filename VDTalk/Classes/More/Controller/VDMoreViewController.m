@@ -9,6 +9,7 @@
 #import "VDMoreViewController.h"
 #import "VDProfileCell.h"
 #import "VDBasicTableViewCellModel.h"
+#import "VDSettingViewController.h"
 
 @interface VDMoreViewController ()
 @property (nonatomic,strong)NSArray *dataArray;
@@ -32,7 +33,7 @@
     VDBasicTableViewCellModel *model10 = [VDBasicTableViewCellModel modelWithTitle:@"体验站" iconName:@"contact_icon_mobile_contact" destinationControllerClass:[UITableViewController class]];
     VDBasicTableViewCellModel *model20 = [VDBasicTableViewCellModel modelWithTitle:@"1" iconName:@"contact_icon_mobile_contact" destinationControllerClass:[UITableViewController class]];
     VDBasicTableViewCellModel *model21 = [VDBasicTableViewCellModel modelWithTitle:@"2" iconName:@"contact_icon_mobile_contact" destinationControllerClass:[UITableViewController class]];
-    VDBasicTableViewCellModel *model30 = [VDBasicTableViewCellModel modelWithTitle:@"设置" iconName:@"contact_icon_mobile_contact" destinationControllerClass:[UITableViewController class]];
+    VDBasicTableViewCellModel *model30 = [VDBasicTableViewCellModel modelWithTitle:@"设置" iconName:@"contact_icon_mobile_contact" destinationControllerClass:[VDSettingViewController class]];
     
     self.dataArray = @[@[pcell],
                             @[model00],
@@ -102,7 +103,7 @@
     {
         VDBasicTableViewCellModel* model = self.dataArray[indexPath.section][indexPath.row];
         if (model.destinationControllerClass != nil) {
-            UIViewController* view = [[model.destinationControllerClass alloc] init];
+            UIViewController* view = [[model.destinationControllerClass alloc] initWithStyle:UITableViewStyleGrouped];
             view.title = model.title;
             [self.navigationController pushViewController:view animated:YES];
         }

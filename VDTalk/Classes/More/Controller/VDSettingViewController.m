@@ -7,16 +7,17 @@
 //
 
 #import "VDSettingViewController.h"
+#import "VDBasicTableViewCellModel.h"
 
 @interface VDSettingViewController ()
-
+@property (nonatomic,strong)NSArray *dataArray;
 @end
 
 @implementation VDSettingViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self setupCellModel];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -29,27 +30,58 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)setupCellModel {
+    
+    VDBasicTableViewCellModel *model00 = [VDBasicTableViewCellModel modelWithTitle:@"账号与安全" iconName:@"contact_icon_mobile_contact" destinationControllerClass:[UITableViewController class]];
+    VDBasicTableViewCellModel *model10 = [VDBasicTableViewCellModel modelWithTitle:@"新消息通知" iconName:@"contact_icon_mobile_contact" destinationControllerClass:[UITableViewController class]];
+    VDBasicTableViewCellModel *model11 = [VDBasicTableViewCellModel modelWithTitle:@"隐私" iconName:@"contact_icon_mobile_contact" destinationControllerClass:[UITableViewController class]];
+    VDBasicTableViewCellModel *model12 = [VDBasicTableViewCellModel modelWithTitle:@"通用" iconName:@"contact_icon_mobile_contact" destinationControllerClass:[UITableViewController class]];
+    VDBasicTableViewCellModel *model20 = [VDBasicTableViewCellModel modelWithTitle:@"关于" iconName:@"contact_icon_mobile_contact" destinationControllerClass:[UITableViewController class]];
+    VDBasicTableViewCellModel *model30 = [VDBasicTableViewCellModel modelWithTitle:@"退出登录" iconName:@"contact_icon_mobile_contact" destinationControllerClass:[UITableViewController class]];
+    self.dataArray = @[
+                       @[model00],
+                       @[model10,model11,model12],
+                       @[model20],
+                       @[model30]
+                       ];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return [self.dataArray count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return [self.dataArray[section] count];
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
+    UITableViewCell *cell;
+    // = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+
     // Configure the cell...
+    cell = [tableView dequeueReusableCellWithIdentifier:@"BasicCell"];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"BasicCell"];
+    }
+    VDBasicTableViewCellModel *model = self.dataArray[indexPath.section][indexPath.row];
+    cell.imageView.image = [UIImage imageNamed:model.icon];
+    cell.textLabel.text = model.title;
     
     return cell;
 }
-*/
+
+- (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
+{
+        VDBasicTableViewCellModel* model = self.dataArray[indexPath.section][indexPath.row];
+        if (model.destinationControllerClass != nil) {
+            UIViewController* view = [[model.destinationControllerClass alloc] initWithStyle:UITableViewStyleGrouped];
+            view.title = model.title;
+            [self.navigationController pushViewController:view animated:YES];
+        }
+}
 
 /*
 // Override to support conditional editing of the table view.
