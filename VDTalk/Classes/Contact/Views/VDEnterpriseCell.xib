@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EnterpriseCell" rowHeight="85" id="KGk-i7-Jjw" customClass="VDEnterpriseCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="85"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="85"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="企业通讯录" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pj1-iT-Rqa">
+                        <rect key="frame" x="16" y="10" width="294" height="20"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="contact_icon_enterprise" translatesAutoresizingMaskIntoConstraints="NO" id="0Ns-rW-h7j">
+                        <rect key="frame" x="16" y="41" width="28" height="28"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="28" id="SgS-Fe-yq8"/>
+                            <constraint firstAttribute="width" constant="28" id="r4X-dN-fQO"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名字" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lQN-kS-olY">
+                        <rect key="frame" x="59" y="37" width="32" height="20"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9xZ-Vz-Ccc">
+                        <rect key="frame" x="59" y="57" width="31" height="15"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2zI-NY-oXB">
+                        <rect key="frame" x="232" y="27" width="80" height="56"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="PiR-Ac-v7p"/>
+                            <constraint firstAttribute="height" constant="56" id="pKT-FA-bfg"/>
+                        </constraints>
+                        <state key="normal" title="管理" backgroundImage="contact_btn_manage">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <state key="highlighted" backgroundImage="contact_btn_manage_highlight"/>
+                    </button>
+                </subviews>
+                <animations/>
+                <constraints>
+                    <constraint firstItem="Pj1-iT-Rqa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="2jM-gN-Tq2"/>
+                    <constraint firstItem="9xZ-Vz-Ccc" firstAttribute="leading" secondItem="0Ns-rW-h7j" secondAttribute="trailing" constant="15" id="BJE-UP-k0g"/>
+                    <constraint firstItem="9xZ-Vz-Ccc" firstAttribute="top" secondItem="lQN-kS-olY" secondAttribute="bottom" id="JBn-Hv-hbF"/>
+                    <constraint firstItem="lQN-kS-olY" firstAttribute="leading" secondItem="0Ns-rW-h7j" secondAttribute="trailing" constant="15" id="KnZ-Yo-KTE"/>
+                    <constraint firstItem="0Ns-rW-h7j" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="NOX-EM-J9c"/>
+                    <constraint firstAttribute="trailing" secondItem="2zI-NY-oXB" secondAttribute="trailing" constant="8" id="Uwb-Qh-b4N"/>
+                    <constraint firstItem="Pj1-iT-Rqa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="aL7-jm-p5R"/>
+                    <constraint firstItem="lQN-kS-olY" firstAttribute="top" secondItem="Pj1-iT-Rqa" secondAttribute="bottom" constant="7" id="ftm-Ta-ZRv"/>
+                    <constraint firstAttribute="trailing" secondItem="Pj1-iT-Rqa" secondAttribute="trailing" constant="10" id="gM5-lw-OBY"/>
+                    <constraint firstItem="2zI-NY-oXB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="27" id="kDO-EP-zrN"/>
+                    <constraint firstItem="0Ns-rW-h7j" firstAttribute="top" secondItem="Pj1-iT-Rqa" secondAttribute="bottom" constant="11" id="yu0-V9-7EM"/>
+                </constraints>
+            </tableViewCellContentView>
+            <animations/>
+            <point key="canvasLocation" x="378" y="364.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="contact_btn_manage" width="66" height="56"/>
+        <image name="contact_btn_manage_highlight" width="66" height="56"/>
+        <image name="contact_icon_enterprise" width="28" height="28"/>
+    </resources>
+</document>
