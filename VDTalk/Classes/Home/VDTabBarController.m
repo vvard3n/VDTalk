@@ -34,7 +34,7 @@
 
     [self setupChildNavgationControllerWithRootViewController:[[VDContactViewController alloc] initWithStyle:UITableViewStyleGrouped] rootViewControllerTitle:@"联系人" tabBarImageName:@"tab_contact"];
 
-    [self setupChildNavgationControllerWithRootViewController:[[UITableViewController alloc] init] rootViewControllerTitle:@"更多" tabBarImageName:@"tab_more"];
+    [self setupChildNavgationControllerWithRootViewController:[[VDMoreViewController alloc] initWithStyle:UITableViewStyleGrouped] rootViewControllerTitle:@"更多" tabBarImageName:@"tab_more"];
 }
 
 /**
