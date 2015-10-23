@@ -37,6 +37,11 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell;
     if (indexPath.row == 0) {
+        if (indexPath.item == 1) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"123"];
+            cell.imageView.image = [UIImage imageNamed:@"contact_icon_mobile_contact"];
+            cell.textLabel.text = @"测试...";
+        }
         cell = [VDProfileCell profileCellWithTableView:tableView];
     }
     else {
@@ -44,12 +49,13 @@
         cell.imageView.image = [UIImage imageNamed:@"contact_icon_mobile_contact"];
         cell.textLabel.text = @"测试...";
     }
+    
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView*)tableView heightForRowAtIndexPath:(NSIndexPath*)indexPath {
     if (indexPath.row == 0) {
-        return 100;
+        return 65;
     }
     else {
         return 44;
